@@ -1,3 +1,63 @@
+/.idea/
+target/
+pom.xml.tag
+pom.xml.releaseBackup
+pom.xml.versionsBackup
+pom.xml.next
+release.properties
+dependency-reduced-pom.xml
+buildNumber.properties
+.mvn/timing.properties
+src/main/resources/META-INF/persistence.xml
 
-# Default ignored files
-/workspace.xml
+# compiled output
+/dist
+/out-tsc
+/src/generated
+/tmp
+
+# dependencies
+client/node_modules
+
+# IDEs and editors
+/.idea
+/**/target
+.project
+.classpath
+.c9/
+*.launch
+.settings/
+*.sublime-workspace
+*.iml
+
+# misc
+/.sass-cache
+/connect.lock
+/coverage
+/libpeerconnection.log
+npm-debug.log
+testem.log
+/typings
+yarn-error.log
+
+# e2e
+/e2e/*.js
+/e2e/*.map
+protractor-results*.txt
+
+# System Files
+.DS_Store
+Thumbs.db
+
+
+# Avoid ignoring Maven wrapper jar file (.jar files are usually ignored)
+!/.mvn/wrapper/maven-wrapper.jar
+debug.log
+debug.log
+
+# Temporary files
+*.tmp
+*.swp
+
+#Client
+/client/node_modules/
