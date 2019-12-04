@@ -1,4 +1,4 @@
 public interface Suit{
 
-    enum Suit { HEARTS, DIAMONDS, CLUBS, SPADES;}
+    enum Suits { HEARTS, DIAMONDS, CLUBS, SPADES}
 }
