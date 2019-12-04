@@ -3,4 +3,6 @@ public interface Blackjack {
         HEARTS, DIAMONDS, CLUBS, SPADES;
     }
 
+
+    //
 }
