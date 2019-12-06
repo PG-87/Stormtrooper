@@ -1,4 +1,4 @@
-public class VIew {
+public class View {
 
 
 
