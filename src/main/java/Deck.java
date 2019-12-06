@@ -10,6 +10,7 @@ public class Deck {
         Collections.shuffle(deckOfCards);
     }
 
+
     public void newDeck() {
         for (int i = 0; i < Rank.ranks.size(); i++) {
             Card card = new Card("HEARTS", Rank.ranks.get(i));
@@ -27,6 +28,11 @@ public class Deck {
             Card card = new Card("CLUBS", Rank.ranks.get(i));
             deckOfCards.add(card);
         }
+
+    public void addCard( Card card){
+        deckOfCards.add(card);
+
     }
+
 
 }
