@@ -9,9 +9,24 @@ public class Deck {
     public void shuffleDeck(){
         Collections.shuffle(deckOfCards);
     }
-    public void addCard( Card card){
-        deckOfCards.add(card);
-    }
 
+    public void newDeck() {
+        for (int i = 0; i < Rank.ranks.size(); i++) {
+            Card card = new Card("HEARTS", Rank.ranks.get(i));
+            deckOfCards.add(card);
+        }
+        for (int i = 0; i < Rank.ranks.size(); i++) {
+            Card card = new Card("DIAMONDS", Rank.ranks.get(i));
+            deckOfCards.add(card);
+        }
+        for (int i = 0; i < Rank.ranks.size(); i++) {
+            Card card = new Card("SPADES", Rank.ranks.get(i));
+            deckOfCards.add(card);
+        }
+        for (int i = 0; i < Rank.ranks.size(); i++) {
+            Card card = new Card("CLUBS", Rank.ranks.get(i));
+            deckOfCards.add(card);
+        }
+    }
 
 }
