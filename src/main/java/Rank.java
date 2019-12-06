@@ -26,4 +26,8 @@ public class Rank {
         name = nameValue;
         value = cardValue;
     }
+
+    public String getValue() {
+        return value;
+    }
 }
