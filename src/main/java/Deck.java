@@ -6,7 +6,7 @@ public class Deck {
 
     private List<Card> deckOfCards;
 
-    public void shuffleDeck(){
+    public void shuffleDeck() {
         Collections.shuffle(deckOfCards);
     }
 
@@ -28,11 +28,5 @@ public class Deck {
             Card card = new Card("CLUBS", Rank.ranks.get(i));
             deckOfCards.add(card);
         }
-
-    public void addCard( Card card){
-        deckOfCards.add(card);
-
     }
-
-
 }

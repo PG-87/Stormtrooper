@@ -7,7 +7,7 @@ public class Card {
         suitValue = suit;
         cardRank = rank;
     }
- //testetsts
+
     public Rank getRank() {
         return cardRank;
     }
