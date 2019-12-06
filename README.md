@@ -1,5 +1,7 @@
 # Stormtrooper
 
+![Image of Flow scheme](http://i.imgur.com/abePXvq.png)
+
 logik
     hur mycket skall du spela för
             spelare     Får en hand
