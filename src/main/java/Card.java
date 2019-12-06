@@ -1,14 +1,11 @@
-public class Card implements Suits, Rank  {
+public class Card {
 
-    private Suits suitValue;
+    private String suitValue;
     private Rank cardRank;
-    private int cardValue;
 
-    public Card (Suits suit, Rank rank, int value){
+    public Card (String suit, Rank rank){
         suitValue = suit;
         cardRank = rank;
-        cardValue = value;
-
-        }
     }
+}
 
