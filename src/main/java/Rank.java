@@ -30,4 +30,13 @@ public class Rank {
     public String getValue() {
         return value;
     }
+
+    public String getName() {
+        return name;
+    }
+
+    @Override
+    public String toString() {
+        return getName();
+    }
 }

@@ -2,7 +2,7 @@ public class View {
 
 
 
-    System.out.print(
+
             // visar "bräde"
 
             // visar datorkort
@@ -10,8 +10,5 @@ public class View {
 
             // visar spelarkort
             // visar värde
-
-            )
-
 
 }
