@@ -9,7 +9,7 @@ private java.util.List hand = new ArrayList();
 
     public void addCard( Card card ) {
         total += card.getValue();
-        if(card.getRank() == Rank.ACE){
+        if(card.getRank() == Rank.ESS){
             soft += 1;
         }
         if(soft > 0){

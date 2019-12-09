@@ -1,10 +1,10 @@
-public class Card {
+public class Card implements Suits {
 
-    private String suitValue;
+    private suits suitValue;
     private Rank cardRank;
 
-    public Card (String suit, Rank rank){
-        suitValue = suit;
+    public Card (suits suits, Rank rank){
+        suitValue = suits;
         cardRank = rank;
     }
 
@@ -17,12 +17,17 @@ public class Card {
         try{
            return Integer.parseInt(rank);
         } catch (Exception ex){
-            if(rank.equals("a")){
+            if(rank.equals("e")){
                 return 11;
             } else {
                 return 10;
             }
         }
+    }
+
+    @Override
+    public String toString() {
+        return cardRank.toString() + " of " + suitValue;
     }
 }
 
