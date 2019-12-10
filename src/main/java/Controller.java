@@ -29,6 +29,8 @@ public class Controller {
         deck = new Deck();
         deck.newDeck(); // skapa full deck för att börja ny Game
         deck.shuffleDeck();         // blanda kortet
+        deck.shuffleDeck();         // blanda kortet
+        deck.shuffleDeck();         // blanda kortet
         Deck player = new Deck(); //player kort
         Deck computer = new Deck(); //computer kort
 //-------------------------------
