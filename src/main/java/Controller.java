@@ -1,29 +1,29 @@
 import java.util.Scanner;
-
 public class Controller {
-
-
-
-
-    Deck deck;
     Hand hand;
     Model model;
     View view;
+    GameLogic gameLogic;
+    private double money;  //player insats (pengar)
 
-
-    public Controller(Deck deck, Hand hand, Model model, View view) {
-        this.deck = deck;
+    public Controller(Hand hand, Model model, View view, GameLogic gameLogic) {
         this.hand = hand;
         this.model = model;
         this.view = view;
-
-        // släng in programmet här.. dvs
-        // metoder för att köra spelet
-
-
+        this.gameLogic = gameLogic;
     }
 
     public void start(){
+        view.printMenu();
+        gameLogic.createStartHandPlayer();
+        gameLogic.createStartHandComputer();
+        view.printPlayerChoise();
+        gameLogic.playComputer();
+        view.printComputerResult();
+        gameLogic.playPlayer();
+        view.printResult();
+
+
         double money;  //player insats (pengar)
         Scanner scanner = new Scanner(System.in);
         deck = new Deck();
