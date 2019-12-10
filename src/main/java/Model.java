@@ -1,9 +1,31 @@
+import java.util.Arrays;
+import java.util.List;
+
 public class Model {
+    Deck deck;
+    List<Card> deckOfCards;
+    List<Card> playerCards;
+    List<Card> dealerCards;
 
-    // List Kort/kortvärde Dator
-    // List Kort/kortvärde spelare
-    // List Deck 52--
+    public Model() {
+        deck = new Deck();
+        deck.newDeck();
+    }
 
+    public Deck getDeck() {
+        return deck;
+    }
 
-    // deck -- > List Kort/kortvärde Dator
+    public List<Card> getPlayerCards() {
+        return playerCards;
+    }
+    public void setPlayerCards(List<Card> playerCards) {
+        this.playerCards = playerCards;
+    }
+    public List<Card> getDealerCards() {
+        return dealerCards;
+    }
+    public void setDealerCards(List<Card> dealerCards) {
+        this.dealerCards = dealerCards;
+    }
 }

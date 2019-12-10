@@ -22,9 +22,15 @@ public class Rank {
 
     public final static List<Rank> ranks = Arrays.asList(ESS, TWO, THREE, FOUR, FIVE, SIX, SEVEN, EIGHT, NINE, TEN, JACK, QUEEN, KING);
 
-    private Rank (String nameValue, String cardValue){
+    public Rank(){
+    }
+    public Rank (String nameValue, String cardValue){
         name = nameValue;
         value = cardValue;
+    }
+
+    public List<Rank> getRanks() {
+        return ranks;
     }
 
     public String getValue() {
