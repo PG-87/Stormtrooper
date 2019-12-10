@@ -28,5 +28,6 @@ public class Deck {
             Card card = new Card(Suits.suits.CLUBS, Rank.ranks.get(i));
             deckOfCards.add(card);
         }
+        shuffleDeck();
     }
 }
