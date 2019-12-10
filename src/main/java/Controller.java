@@ -15,13 +15,14 @@ public class Controller {
 
     public void start(){
         view.printMenu();
-        gameLogic.createStartHandPlayer();
-        gameLogic.createStartHandComputer();
-        view.printPlayerChoise();
-        gameLogic.playComputer();
-        view.printComputerResult();
-        gameLogic.playPlayer();
-        view.printResult();
+        gameLogic.runGame();
+//        gameLogic.createStartHandPlayer();
+//        gameLogic.createStartHandComputer();
+//        view.printPlayerChoise();
+//        gameLogic.playComputer();
+//        view.printComputerResult();
+//        gameLogic.playPlayer();
+//        view.printResult();
 
 
         double money;  //player insats (pengar)
