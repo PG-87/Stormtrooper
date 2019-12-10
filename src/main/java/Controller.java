@@ -5,6 +5,7 @@ public class Controller {
     View view;
     GameLogic gameLogic;
     private double money;  //player insats (pengar)
+    Scanner scanner = new Scanner(System.in);
 
     public Controller(Hand hand, Model model, View view, GameLogic gameLogic) {
         this.hand = hand;
@@ -22,25 +23,40 @@ public class Controller {
         view.printComputerResult();
         gameLogic.playPlayer();
         view.printResult();
-
+        model.getDeck();
 
         double money;  //player insats (pengar)
-        Scanner scanner = new Scanner(System.in);
-        deck = new Deck();
-        deck.newDeck(); // skapa full deck för att börja ny Game
-        deck.shuffleDeck();         // blanda kortet
-        Deck player = new Deck(); //player kort
-        Deck computer = new Deck(); //computer kort
+
 //-------------------------------
         System.out.println("Welcome to Blackjack!");
         System.out.println("How much would you like to bet?");
         money = scanner.nextDouble();
         System.out.println("You have " + money + " Kr to bet");
 //  System.out.println("Press ENTER to Start...");
-        player.draw(deck); // player ta 2 kort
-        player.draw(deck);
-        computer.draw(deck); // computer ta 2 kort
-        computer.draw(deck);
+        //START RUNDA*******
+        model.dealerCards.add(model.deck.drawCard());
+        model.playerCards.add(model.deck.drawCard());
+        model.playerCards.add(model.deck.drawCard());
+
+        public int sumOfDealerCards(){
+            model.dealerCards.
+                    //TODO SUMMERA DEALER OCH PLAYERS KORT!!!
+        }
+
+        //SKRIV UT DEALERS KORT OCH PLAYER KORT
+        System.out.println("Dealer drog: " + model.dealerCards.get(0));
+        System.out.println("Du drog: "+ model.playerCards.get(0) +  " & " + model.playerCards.get(1));
+        System.out.println("Hit or Stay?");
+        while (model.playerCards.)
+        String playerChoice = scanner.nextLine();
+        playerChoice.toLowerCase();
+        int playerCards = 2;
+        if(playerChoice.equals("hit"))
+            model.playerCards.add(model.deck.drawCard());
+            System.out.println("Du drog " + model.playerCards.get(playerCards));
+            playerCards = + 1;
+        else
+
 //---------------------------------------
         while(true) {
             System.out.println("Your Hand:" + player.toString()); //visa  player kort
