@@ -31,6 +31,7 @@ public class Controller {
         deck.shuffleDeck();         // blanda kortet
         deck.shuffleDeck();         // blanda kortet
         deck.shuffleDeck();         // blanda kortet
+        deck.shuffleDeck();         // blanda kortet
         Deck player = new Deck(); //player kort
         Deck computer = new Deck(); //computer kort
 //-------------------------------
