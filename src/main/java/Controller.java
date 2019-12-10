@@ -86,7 +86,10 @@ public class Controller {
         player.moveAllToDeck(deck);
         computer.moveAllToDeck(deck);
         System.out.println("End of Hand.");
-        System.out.println("Game over! You lost your money.");
+        System.out.println("Game over! You lost your money..");
+        System.out.println("Game over! You lost your money..");
     }
+
+    //---------------------------------------
 
 }
