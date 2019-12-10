@@ -3,6 +3,7 @@ import java.util.List;
 
 public class Model {
     Deck deck;
+    List<Card> deckOfCards;
     List<Card> playerCards;
     List<Card> dealerCards;
 
