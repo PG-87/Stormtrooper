@@ -3,28 +3,20 @@ import java.util.Scanner;
 public class Controller {
     Model model;
     View view;
-    GameLogic gameLogic;
+    Deck deck;
     int dealerHandValue;
     int playerHandValue;
     private double money;  //player insats (pengar)
     Scanner scanner = new Scanner(System.in);
 
-    public Controller(Model model, View view, GameLogic gameLogic) {
+    public Controller(Model model, View view, Deck deck) {
         this.model = model;
         this.view = view;
-        this.gameLogic = gameLogic;
+        this.deck = deck;
     }
 
     public void start() throws InterruptedException {
-//        view.printMenu();
-//        gameLogic.createStartHandPlayer();
-//        gameLogic.createStartHandComputer();
-//        view.printPlayerChoise();
-//        gameLogic.playComputer();
-//        view.printComputerResult();
-//        gameLogic.playPlayer();
-//        view.printResult();
-        model.getDeck();
+        deck.newDeck();
 
         System.out.println("Welcome to Blackjack!");
         System.out.println("How much would you like to bet?");
@@ -33,9 +25,9 @@ public class Controller {
         System.out.println("You have " + money + " Kr to bet");
 //  System.out.println("Press ENTER to Start...");
         //START RUNDA*******
-        model.dealerCards.add(model.deck.drawCard());
-        model.playerCards.add(model.deck.drawCard());
-        model.playerCards.add(model.deck.drawCard());
+        model.dealerCards.add(deck.drawCard());
+        model.playerCards.add(deck.drawCard());
+        model.playerCards.add(deck.drawCard());
 
         System.out.println("Dealer drog: " + model.dealerCards.get(0));
         System.out.println("Du drog: " + model.playerCards.get(0) + " & " + model.playerCards.get(1));
@@ -43,39 +35,61 @@ public class Controller {
         dealerHandValue = calculateTotal(model.getDealerCards(), model.getDealerCards().get(model.getDealerCards().size() - 1));
         System.out.println("Dealer: " + dealerHandValue);
         playerHandValue = calculateTotal(model.getPlayerCards(), model.getPlayerCards().get(model.getPlayerCards().size() - 1));
+
         System.out.println("Player: " + playerHandValue);
 
         if (playerHandValue == 21)
             System.out.println("PLAYER WINS!!!");
-        while (playerHandValue < 21)
-            System.out.println("Hit or Stay?");
-        String playerChoice = scanner.nextLine();
-        playerChoice.toLowerCase();
-        if (playerChoice.equals("hit")) {
-            model.playerCards.add(model.deck.drawCard());
-            System.out.println("Du drog " + model.playerCards.get(model.playerCards.size() - 1));
-            System.out.println("Player: " + playerHandValue);
-        } else if (playerChoice.equals("stay")) {
-            while (dealerHandValue < 17)
-                model.dealerCards.add(model.deck.drawCard());
-            System.out.println("Dealer drog: " + model.dealerCards.get(model.playerCards.size() - 1));
-            System.out.println("Dealer: " + dealerHandValue);
-            Thread.sleep(100);
+        else {
+            while (playerHandValue < 21 ) {
+                System.out.println("Hit or Stay?");
+                String playerChoice = scanner.nextLine();
+                playerChoice.toLowerCase();
+                if (playerChoice.equals("hit")) {
+                    model.playerCards.add(deck.drawCard());
+                    playerHandValue = calculateTotal(model.getPlayerCards(), model.getPlayerCards().get(model.getPlayerCards().size() - 1));
+                    System.out.println("Du drog " + model.playerCards.get(model.playerCards.size() - 1));
+                    System.out.println("Player: " + playerHandValue);
+                } else if (playerChoice.equals("stay")) {
+                    System.out.println("You stayed!");
+                    break;
+                }
+            }
+            if (playerHandValue > 21)
+                System.out.println("You busted!");
+            else {
+                while (dealerHandValue < 17) {
+                    model.dealerCards.add(deck.drawCard());
+                    dealerHandValue = calculateTotal(model.getDealerCards(), model.getDealerCards().get(model.getDealerCards().size() - 1));
+                    System.out.println("Dealer drog: " + model.dealerCards.get(model.dealerCards.size() - 1));
+                    System.out.println("Dealer: " + dealerHandValue);
+                    Thread.sleep(500);
+                }
+            }
+             if (playerHandValue > dealerHandValue && playerHandValue <= 21 || dealerHandValue >21)
+                 System.out.println("YOU Won!");
+             else
+                 System.out.println("YOU Lost!");
+            }
         }
-    }
+
     public int calculateTotal(List<Card> cardList, Card card) {
         int summa = 0;
         for (Card card1: cardList) {
             summa = summa + card1.getValue();
         }
-        return checkAce(summa, card);
+        return checkAce(summa, cardList);
     }
 
-    public int checkAce(int total, Card card) {
-        if (card.getRank() == Rank.ESS)
-            if(total >= 21){
-                total = total - 10;
-            }
+    public int checkAce(int total, List<Card> cardList) {
+
+        for (Card card: cardList             ) {
+            if (card.getRank() == Rank.ESS)
+                if(total >= 21){
+                    total = total - 10;
+                }
+        }
+
         return total;
     }
 }
