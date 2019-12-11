@@ -1,19 +1,11 @@
-import java.util.Arrays;
+import java.util.ArrayList;
 import java.util.List;
 
 public class Model {
-    Deck deck;
-    List<Card> deckOfCards;
-    List<Card> playerCards;
-    List<Card> dealerCards;
+    List<Card> playerCards = new ArrayList<>();
+    List<Card> dealerCards = new ArrayList<>();
 
     public Model() {
-        deck = new Deck();
-        deck.newDeck();
-    }
-
-    public Deck getDeck() {
-        return deck;
     }
 
     public List<Card> getPlayerCards() {
