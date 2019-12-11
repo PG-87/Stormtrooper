@@ -2,16 +2,14 @@ import java.util.List;
 import java.util.Scanner;
 public class Controller {
     Model model;
-    View view;
     Deck deck;
     int dealerHandValue;
     int playerHandValue;
-    private double money;  //player insats (pengar)
+    private double money;
     Scanner scanner = new Scanner(System.in);
 
-    public Controller(Model model, View view, Deck deck) {
+    public Controller(Model model, Deck deck) {
         this.model = model;
-        this.view = view;
         this.deck = deck;
     }
 
@@ -23,8 +21,7 @@ public class Controller {
         System.out.print("Place bet: ");
         money = scanner.nextDouble();
         System.out.println("You have " + money + " Kr to bet");
-//  System.out.println("Press ENTER to Start...");
-        //START RUNDA*******
+
         model.dealerCards.add(deck.drawCard());
         model.playerCards.add(deck.drawCard());
         model.playerCards.add(deck.drawCard());
