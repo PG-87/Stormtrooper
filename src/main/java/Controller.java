@@ -17,8 +17,8 @@ public class Controller {
     public void start() throws InterruptedException {
         deck.newDeck();
         view.startMenu();
-        scanner.nextLine();
         money = scanner.nextDouble();
+        scanner.nextLine();
         view.money(money);
         firstDraw();
         view.dealerDraw(model.dealerCards.get(0));
