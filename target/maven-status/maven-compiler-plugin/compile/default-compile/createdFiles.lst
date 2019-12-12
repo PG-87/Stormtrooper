@@ -1,1 +1,10 @@
 Main.class
+Suits.class
+View.class
+Rank.class
+Deck.class
+Suits$suits.class
+Card.class
+fxmlController.class
+Model.class
+Controller.class

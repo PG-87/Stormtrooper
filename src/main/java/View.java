@@ -3,9 +3,8 @@ public class View {
     public void startMenu(){
         System.out.println("Welcome to Blackjack!");
     }
-    public void bet(){
-        System.out.println("How much would you like to bet?");
-        System.out.print("Place bet: ");
+    public void bet(int saldo){
+        System.out.println("You have "+ saldo + " in your pocket" + "\n" + "How much would you like to bet?");
     }
     public void setSaldo(int Saldo){
         System.out.println("You have " + Saldo + " Kr to bet");
@@ -38,10 +37,19 @@ public class View {
     public void playerWin(){
         System.out.println("You won!" + "\n");
     }
+    public void playerWin(int totalMoney, int priceMoney){
+        System.out.println("You won " + priceMoney + " Bananas! You have " + totalMoney +" on your accout" + "\n");
+    }
     public void playerLose(){
         System.out.println("You lost!" + "\n");
     }
     public void playerBust(){
         System.out.println("You bust!");
+    }
+    public void playerEnterToLargeBet(){
+        System.out.println("\n" + "Bet to big, try bet the amont you own....");
+    }
+    public void showSaldo(int saldo){
+        System.out.println("You have "+ saldo + " in your pocket.");
     }
 }
