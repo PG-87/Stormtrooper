@@ -8,6 +8,11 @@ public class Model {
     public Model() {
     }
 
+    public void clearList(){
+        playerCards.removeAll(playerCards);
+        dealerCards.removeAll(dealerCards);
+    }
+
     public List<Card> getPlayerCards() {
         return playerCards;
     }
@@ -21,3 +26,6 @@ public class Model {
         this.dealerCards = dealerCards;
     }
 }
+
+
+
