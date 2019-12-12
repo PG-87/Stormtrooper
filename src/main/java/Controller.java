@@ -48,7 +48,6 @@ public class Controller {
             }
             if (playerHandValue > 21) {
                 view.playerBust();
-                view.playerLose();
             }
             else {
                 while (dealerHandValue < 17) {
