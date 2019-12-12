@@ -6,7 +6,8 @@ public class Controller {
     View view = new View();
     int dealerHandValue;
     int playerHandValue;
-    private double money;
+    private int money;
+    private int Saldo = 100;
     Scanner scanner = new Scanner(System.in);
 
     public Controller(Model model, Deck deck) {
@@ -14,12 +15,16 @@ public class Controller {
         this.deck = deck;
     }
 
+
     public void start() throws InterruptedException {
         deck.newDeck();
         view.startMenu();
-        money = scanner.nextDouble();
+        view.setSaldo(Saldo);
+        view.bet();
+        money = scanner.nextInt();
         scanner.nextLine();
-        view.money(money);
+        Saldo = Saldo - money;
+        view.betPlaced(money, Saldo);
         firstDraw();
         view.dealerDraw(model.dealerCards.get(0));
         view.playerDraw(model.playerCards.get(0), model.playerCards.get(1));
@@ -31,7 +36,7 @@ public class Controller {
         if (playerHandValue == 21)
             view.playerWin();
         else {
-            while (playerHandValue < 21 ) {
+            while (playerHandValue < 21) {
                 view.hitOrStay();
                 String playerChoice = scanner.nextLine();
                 playerChoice.toLowerCase();
@@ -48,8 +53,7 @@ public class Controller {
             }
             if (playerHandValue > 21) {
                 view.playerBust();
-            }
-            else {
+            } else {
                 while (dealerHandValue < 17) {
                     model.dealerCards.add(deck.drawCard());
                     calculateDealerScore();
@@ -58,12 +62,74 @@ public class Controller {
                     Thread.sleep(1000);
                 }
             }
-             if (playerHandValue > dealerHandValue && playerHandValue <= 21 || dealerHandValue >21)
-                 view.playerWin();
-             else
-                 view.playerLose();
+            if (playerHandValue > dealerHandValue && playerHandValue <= 21 || dealerHandValue > 21) {
+                view.playerWin();
+                rePlay();
+            } else {
+                view.playerLose();
+                rePlay();
             }
         }
+    }
+
+
+    private void rePlay() throws InterruptedException{
+        view.startMenu();
+        model.clearList();
+        view.setSaldo(Saldo);
+        view.bet();
+        money = scanner.nextInt();
+        scanner.nextLine();
+        Saldo = Saldo - money;
+        view.betPlaced(money, Saldo);
+        firstDraw();
+        view.dealerDraw(model.dealerCards.get(0));
+        view.playerDraw(model.playerCards.get(0), model.playerCards.get(1));
+        calculateDealerScore();
+        view.checkDealerScore(dealerHandValue);
+        calculatePlayerScore();
+        view.checkPlayerScore(playerHandValue);
+
+        if (playerHandValue == 21)
+            view.playerWin();
+        else {
+            while (playerHandValue < 21) {
+                view.hitOrStay();
+                String playerChoice = scanner.nextLine();
+                playerChoice.toLowerCase();
+                if (playerChoice.equals("hit")) {
+                    view.playerChoice(playerChoice);
+                    model.playerCards.add(deck.drawCard());
+                    calculatePlayerScore();
+                    view.playerDraw(model.playerCards.get(model.playerCards.size() - 1));
+                    view.checkPlayerScore(playerHandValue);
+                } else if (playerChoice.equals("stay")) {
+                    view.playerChoice(playerChoice);
+                    break;
+                }
+            }
+            if (playerHandValue > 21) {
+                view.playerBust();
+            } else {
+                while (dealerHandValue < 17) {
+                    model.dealerCards.add(deck.drawCard());
+                    calculateDealerScore();
+                    view.dealerDraw(model.dealerCards.get(model.dealerCards.size() - 1));
+                    view.checkDealerScore(dealerHandValue);
+                    Thread.sleep(1000);
+                }
+            }
+            if (playerHandValue > dealerHandValue && playerHandValue <= 21 || dealerHandValue > 21) {
+                view.playerWin();
+                rePlay();
+            }
+            else {
+                view.playerLose();
+                rePlay();
+            }
+        }
+    }
+
 
     public int calculateTotal(List<Card> cardList, Card card) {
         int summa = 0;
@@ -95,4 +161,5 @@ public class Controller {
     public void calculateDealerScore(){
         dealerHandValue = calculateTotal(model.getDealerCards(), model.getDealerCards().get(model.getDealerCards().size() - 1));
     }
+
 }
