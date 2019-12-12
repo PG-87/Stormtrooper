@@ -17,6 +17,7 @@ public class Controller {
     public void start() throws InterruptedException {
         deck.newDeck();
         view.startMenu();
+        scanner.nextLine();
         money = scanner.nextDouble();
         view.money(money);
         firstDraw();
@@ -55,7 +56,7 @@ public class Controller {
                     calculateDealerScore();
                     view.dealerDraw(model.dealerCards.get(model.dealerCards.size() - 1));
                     view.checkDealerScore(dealerHandValue);
-                    Thread.sleep(500);
+                    Thread.sleep(1000);
                 }
             }
              if (playerHandValue > dealerHandValue && playerHandValue <= 21 || dealerHandValue >21)
