@@ -52,4 +52,6 @@ public class View {
     public void showSaldo(int saldo){
         System.out.println("You have "+ saldo + " in your pocket.");
     }
+    public void gameOver(){System.out.println("Goddamn your out of bananas, go to your'e trailer, punk");
+    }
 }

@@ -1,3 +1,4 @@
+import java.util.InputMismatchException;
 import java.util.List;
 import java.util.Scanner;
 public class Controller {
@@ -8,6 +9,7 @@ public class Controller {
     int playerHandValue;
     int money;
     int Saldo = 100;
+    String playerInput;
     Scanner scanner = new Scanner(System.in);
 
 
@@ -25,8 +27,12 @@ public class Controller {
 
         while (Saldo > 0 ) {
             view.bet(Saldo);
-            money = scanner.nextInt();
-            scanner.nextLine();
+            playerInput = scanner.nextLine();
+            try {
+                money = Integer.parseInt(playerInput);
+            } catch (Exception e){
+                e.getMessage();
+            }
             if(money <= Saldo && money >= 1) {
                 Saldo = Saldo - money;
                 view.betPlaced(money, Saldo);
@@ -44,8 +50,7 @@ public class Controller {
 
 
         }
-        System.out.println("Goddamn your out of bananas, go to your'e trailer, punk");
-
+        view.gameOver();
     }
 
 
