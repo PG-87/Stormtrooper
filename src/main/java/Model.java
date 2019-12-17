@@ -4,13 +4,9 @@ import java.util.List;
 public class Model {
     List<Card> playerCards = new ArrayList<>();
     List<Card> dealerCards = new ArrayList<>();
+    List<Card> deckOfCards = new ArrayList<>();
 
     public Model() {
-    }
-
-    public void clearList(){
-        playerCards.removeAll(playerCards);
-        dealerCards.removeAll(dealerCards);
     }
 
     public List<Card> getPlayerCards() {
