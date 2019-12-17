@@ -1,0 +1,20 @@
+2019-12-03
+Fick projektarbetet men endast jag och Aisha närvarande. Satte oss in i hur blackjack funkar och vilka regler som finns.
+
+2019-12-04
+Sebastian joinar gruppen och vi skapar kort i Trello för att se vad som behövs.
+
+2019-12-06
+Sitter i discord med hela gruppen och arbetar fram klasserna Card, Rank och Suits. Samt samlar ihop dessa i deckklassen.
+
+2019-12-09
+Skapat enum på Suits och en testklass för att se så detta funkar som det skall.
+
+2019-12-10
+Fixar till vårt repo på github och sätter regler på push (minst 2 reviews för merch). Går igenom att alla måste pusha till egen branch och inte till master.
+
+2019-12-11
+lagt över mycket kod till controller som var utsprid på andra klasser
+
+2019-12-17
+Fixat det sista inför presentationen samt rättstavningar i programmet.
