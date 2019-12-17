@@ -59,7 +59,7 @@ public class View {
         System.out.println("You bust!");
     }
     public void playerEnterToLargeBet() {
-        System.out.println("\n" + "Bet to big, try bet the amount you own....");
+        System.out.println("\n" + "You need to place a realistic bet!");
     }
     public void showSaldo(double saldo) {
         System.out.println("You have " + saldo + " in your pocket.");
