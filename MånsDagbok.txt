@@ -1,0 +1,146 @@
+﻿Documentation
+
+
+2019-12-06 Patrik / Måns / Luis ( över discord )
+Hela kalssen satt egentligen över discord, men kom fram till att visa klasser så som card och deck behövdes innan alla kunde börja jobba på olika grejer ifrån olika håll. 
+Så jag och pratik hoppade över till en egen kanal och körde detta ihop , luis kom in joinade oss två lite senare.
+
+
+--
+52 kort 
+4 färger 
+13 olika kort per färg
+--
+
+
+
+
+Card class implements Suits
+3 variabler per kort :
+SuitValue - vilken färg / symbol på kortet
+CardRank - vilken siffra som står på kortet ( från ett till kung )
+CardValue - vilket värde kortet har ( 1-11 )
+
+
+
+
+Suits interface 
+4 enum:
+HEART
+DAIMOND
+SPADES
+CLUBS
+
+
+
+
+Rank interface
+Private list , innehåller rank. 
+
+
+
+
+Deck Class
+En loop som lopar igenom och skapar en komplett kortlek, kort för kort , Suit för suit.
+
+
+Dum idé att skapa två kort per Ace , då det ger för många kort i kortleken & då ger en större chans för att få ett Ace än något annat kort.
+Kanske bättre att köra som Luis sa och ha värdet på Ace , som X för att sedan sätta värdet till antingen 1 eller 11.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+_________________________________________________________________________
+
+
+2019-12-09 Patrik / Måns
+
+
+Skapat Enums på Suits
+        Vid skapandet av nytt kort tar den ett Enum, så nytt kort är inte “hårdkodat”   längre.
+Detta tack vare ett nytt interface ‘Suits’ som Card classen implementerar. 
+Interfacet suits innehåller ‘enum suits (HEARTS,DIAMONDS,SPADES,CLUBS)’
+ 
+Vi har skapat en test class, där vi testat card klassen, genom att skapa ett kort via suits-interfacet osv. 
+ 
+        Detta är pushat till git & redo för pull. 
+
+
+_________________________________________________________________________
+
+
+2019-12-10
+
+
+ToDo:
+        Aisha har kört controller över helgen , Behövs methoder i Deck classen för att den ska funka.
+
+
+ Patrik & Måns kör på med dem. 
+
+
+_________________________________________________________________________
+
+
+2019-12-10
+Crowd-programming med gruppen , fick programmet att funka , lite små fix kvar så som att städa upp text som printas ut osv.
+
+
+________________________________________________________________________
+
+
+2019-12-11
+ ( hela gruppen )
+Satt och “snyggade till” koden , flyttade över alla system.out.println till view classen osv. 
+Flyttade ut allting i egna metoder m.m.
+_________________________________________________________________________
+
+
+
+
+
+
+
+
+
+
+
+
+2019-12-12
+Måns fixade med hjälp av Linus ifrån den andra gruppen , varför en av våran System.out.println printades x2 gånger. 
+Var pga att vi använt scannern för int , och sedan string. 
+Fixat och pushat via Patriks dator då mitt git krånglade.
+
+
+tugba och aisha fixade ett first draft på gui , patrik fixade det med egna bilder och det som behövs. 
+
+
+luis ,ska koppla ihop bilderna med en fmx fil, så att det funkar.
+_________________________________________________________________________
+
+
+
+
+
+
+
+
+2019-12-12
+Måns 
+Första Iterration utav player’Bank’ system ( är ‘persistent’ genom flera rundor - dock inget rewardsystem än)
+även first iterration utav “rePlay” function ( så att man kan spela flera rundor efter varandra ).
+
+
+_________________________________________________________________________
