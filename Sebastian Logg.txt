@@ -1,0 +1,19 @@
+Loggbok - Sebastian
+
+2019-12-03
+Sitter med gruppen Bank till lunch. Därefter in i blackjack. 
+Börjar på en Trello.
+2019-12-04
+Forstättning på diskussion, ombearbetning trello.
+2019-12-06
+Gruppen sitter på discord, fortsatt diskussion..
+Avslutas med att patrik och Måns tar tag i kort/deck klasserna
+2019-12-10
+Crowd programmering i skolan.
+2019-12-10
+Crowd programmering i skolan.
+2019-12-12
+Skriver kod för att programmet skall kunna köras 
+upprepade gånger och bet funkar för den summan som finns.
+2019-12-13 
+Lägger till blackjack funktion (21) med patrik.
