@@ -9,9 +9,9 @@ Forstättning på diskussion, ombearbetning trello.
 Gruppen sitter på discord, fortsatt diskussion..
 Avslutas med att patrik och Måns tar tag i kort/deck klasserna
 2019-12-10
-Crowd programmering i skolan.
+Crowd programmering i skolan. Jobbar med kontroller klass, logik och annat
 2019-12-10
-Crowd programmering i skolan.
+Crowd programmering i skolan. Jobbar med kontroller klass, logik och annat
 2019-12-12
 Skriver kod för att programmet skall kunna köras 
 upprepade gånger och bet funkar för den summan som finns.
