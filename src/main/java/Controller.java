@@ -27,6 +27,7 @@ public class Controller {
                 money = Integer.parseInt(playerInput);
             } catch (Exception e){
                 e.getMessage();
+                System.out.println("You need to bet money!");
             }
             if(money <= saldo && money >= 1) {
                 saldo = saldo - money;
