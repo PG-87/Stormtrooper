@@ -6,6 +6,68 @@
     <groupId>Stormtrooper</groupId>
     <artifactId>Blackjack</artifactId>
     <version>1.0-SNAPSHOT</version>
+    <developers>
+        <developer>
+            <id>PG-87</id>
+            <name>Patrik Gustafsson</name>
+            <email>pg.patrik@gmail.com</email>
+            <organization>ITHS</organization>
+            <organizationUrl>http://www.ithsdistans.se</organizationUrl>
+            <roles>
+                <role>developer</role>
+            </roles>
+        </developer>
+        <developer>
+            <id>mansfritzner</id>
+            <name>Måns Fritzner</name>
+            <email>mans.fritzner@gmail.com</email>
+            <organization>ITHS</organization>
+            <organizationUrl>http://www.ithsdistans.se</organizationUrl>
+            <roles>
+                <role>developer</role>
+            </roles>
+        </developer>
+        <developer>
+            <id>SebastianWaltilla</id>
+            <name>Sebastian Waltilla</name>
+            <email>sebastianwaltilla@hotmail.com</email>
+            <organization>ITHS</organization>
+            <organizationUrl>http://www.ithsdistans.se</organizationUrl>
+            <roles>
+                <role>developer</role>
+            </roles>
+        </developer>
+        <developer>
+            <id>Bentgb</id>
+            <name>Tugba Arslan</name>
+            <email>karaca.tgb@gmail.com</email>
+            <organization>ITHS</organization>
+            <organizationUrl>http://www.ithsdistans.se</organizationUrl>
+            <roles>
+                <role>developer</role>
+            </roles>
+        </developer>
+        <developer>
+            <id>AishAsafi</id>
+            <name>Aisha Alsafi</name>
+            <email>marena665@hotmail.com</email>
+            <organization>ITHS</organization>
+            <organizationUrl>http://www.ithsdistans.se</organizationUrl>
+            <roles>
+                <role>developer</role>
+            </roles>
+        </developer>
+        <developer>
+            <id>lfng84</id>
+            <name>Luis Fidel Gutierrez Nunez</name>
+            <email>lfgn84@gmail.com</email>
+            <organization>ITHS</organization>
+            <organizationUrl>http://www.ithsdistans.se</organizationUrl>
+            <roles>
+                <role>developer</role>
+            </roles>
+        </developer>
+    </developers>
     <dependencies>
         <dependency>
             <groupId>org.openjfx</groupId>
