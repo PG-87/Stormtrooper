@@ -12,10 +12,6 @@ public class Controller {
     String playerInput;
     Scanner scanner = new Scanner(System.in);
 
-
-
-
-
     public Controller(Model model, Deck deck) {
         this.model = model;
         this.deck = deck;
@@ -93,11 +89,8 @@ public class Controller {
                     view.playerLose();
                 }
         }
-
        resetGame();
-
     }
-
 
     public void resetGame(){
         playerHandValue = 0;
@@ -106,8 +99,6 @@ public class Controller {
         model.getPlayerCards().clear();
         deck.newDeck();
     }
-
-
 
     public int calculateTotal(List<Card> cardList, Card card) {
         int summa = 0;
