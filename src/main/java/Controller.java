@@ -1,4 +1,3 @@
-import java.util.InputMismatchException;
 import java.util.List;
 import java.util.Scanner;
 public class Controller {
@@ -7,8 +6,8 @@ public class Controller {
     View view = new View();
     int dealerHandValue;
     int playerHandValue;
-    int money;
-    int Saldo = 100;
+    double money;
+    double saldo = 100;
     String playerInput;
     Scanner scanner = new Scanner(System.in);
 
@@ -21,17 +20,17 @@ public class Controller {
         deck.newDeck();
         view.startMenu();
 
-        while (Saldo > 0 ) {
-            view.bet(Saldo);
+        while (saldo > 0 ) {
+            view.bet(saldo);
             playerInput = scanner.nextLine();
             try {
                 money = Integer.parseInt(playerInput);
             } catch (Exception e){
                 e.getMessage();
             }
-            if(money <= Saldo && money >= 1) {
-                Saldo = Saldo - money;
-                view.betPlaced(money, Saldo);
+            if(money <= saldo && money >= 1) {
+                saldo = saldo - money;
+                view.betPlaced(money, saldo);
                 firstDraw();
                 view.dealerDraw(model.dealerCards.get(0));
                 view.playerDraw(model.playerCards.get(0), model.playerCards.get(1));
@@ -43,17 +42,16 @@ public class Controller {
             } else {
                 view.playerEnterToLargeBet();
             }
-
-
         }
         view.gameOver();
     }
 
-
     public void playTheGame()throws InterruptedException{
 
-            if (playerHandValue == 21)
+            if (playerHandValue == 21) {
+                saldo = saldo + money * 2.5;
                 view.playerWin();
+            }
             else {
                 while (playerHandValue < 21) {
                     view.hitOrStay();
@@ -72,7 +70,7 @@ public class Controller {
                 }
 
                 if (playerHandValue > 21) {
-
+                    view.playerBust();
                 } else {
                     while (dealerHandValue < 17) {
                         model.dealerCards.add(deck.drawCard());
@@ -83,8 +81,8 @@ public class Controller {
                     }
                 }
                 if (playerHandValue > dealerHandValue && playerHandValue <= 21 || dealerHandValue > 21) {
-                    Saldo = Saldo + (money * 2);
-                    view.playerWin(Saldo, money * 2);
+                    saldo = saldo + (money * 2);
+                    view.playerWin(saldo, money * 2);
                 } else {
                     view.playerLose();
                 }
